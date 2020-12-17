@@ -1,1 +1,5 @@
-# leet_code_yeet_code
+# Leet Code Grind
+## Let'sket it
+
+# Structure
+## Probably going to divide by difficulty, TBD
