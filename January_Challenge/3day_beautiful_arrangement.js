@@ -28,7 +28,7 @@ const countArrangement = function(num) {
 			const popped = n;
 			const newIndex = index + 1;
 			for (let i = 0; i < numArray.length; i++) {
-				const call = helper(numArray, newIndex)
+				const call = helper(numArray.slice(1), newIndex)
 				if (!popped % index && !index % popped ){
 					if (call !== "Failed!") {
 						counter++;
@@ -39,6 +39,7 @@ const countArrangement = function(num) {
 			return counter;
 		}
 
-
-		return helper(num, 0);
+		if (helper !== "Failed") return helper(num, 0);
 	}
+
+	console.log(countArrangement(2));
