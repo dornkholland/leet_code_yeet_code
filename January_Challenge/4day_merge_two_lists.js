@@ -16,6 +16,9 @@ const mergeTwoLists = function (l1, l2) {
     start = l2;
     otherTree = l1;
   }
+  start.next = mergeTwoLists(start.next, otherTree);
+
+  return start;
 
   // check whether start.next or other tree is larger
 };
