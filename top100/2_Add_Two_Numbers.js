@@ -13,6 +13,7 @@
 // base case when arg is 0
 // return null
 
+
 var addTwoNumbers = function (l1, l2) {
   const translateToNumber = (tree) => {
     if (tree === null) return 0;
@@ -23,9 +24,10 @@ var addTwoNumbers = function (l1, l2) {
   const secondFunction = (num) => {
     if (num === 0) return null;
     const remainder = num % 10;
-    const ourNode = new listNode(remainder);
+    const ourNode = new ListNode(remainder);
     nextNumber = (num - remainder) / 10;
     ourNode.next = secondFunction(nextNumber);
+    return ourNode;
   };
-  return secondFunction(num);
+  return secondFunction(sum);
 };
