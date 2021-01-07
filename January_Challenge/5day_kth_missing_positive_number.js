@@ -7,4 +7,19 @@
 
 // return counter
 
+var findKthPositive = function(arr, k) {
+    let counter = 0;
+    let importantGuy = 1;
+    let index = 0;
+
+    while (counter !== k) {
+        if (arr[index] === importantGuy) {
+            index++;
+        } else {
+            counter++;
+        }
+        importantGuy++;
+    }
+    return importantGuy - 1;
+}
 
