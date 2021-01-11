@@ -17,14 +17,17 @@ var createSortedArray = (instructions) => {
   for (let i = 0; i < instructions.length; i++) {
     const insertionPoint = binarySearch(nums, instructions[i]);
     let thisCount = 0;
-    if (count[instructions[i]]) {
-      thisCount = count[instructions[i]];
-      count[instructions[i]]++;
+    if (visited[instructions[i]]) {
+      thisCount = visited[instructions[i]];
+      visited[instructions[i]]++;
     } else {
-      count[instructions[i]] === 1;
+      visited[instructions[i]] === 1;
     }
-    nums.splice(index, 0, instructions[i]);
-    const currentCount = count;
+    totalCost += Math.min(
+      insertionPoint - thisCount,
+      nums.length - insertionPoint
+    );
+    nums.splice(insertionPoint, 0, instructions[i]);
   }
-  return result % (1000000000 + 7);
+  return totalCost % (1000000000 + 7);
 };
